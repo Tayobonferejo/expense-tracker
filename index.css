@@ -27,7 +27,7 @@ body {
   justify-content: center;
 }
 
-body, .nav-bar , .balance{
+body, .nav-bar , .bal-account-div {
     display: flex;
 }
 
