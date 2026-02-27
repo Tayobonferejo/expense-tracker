@@ -27,7 +27,7 @@ body {
   justify-content: center;
 }
 
-body, .nav-bar , .bal-account-div {
+body, .nav-bar , .bal-account-div, .output-div, .output-div > div {
     display: flex;
 }
 
@@ -47,17 +47,31 @@ main {
 .balance {
   width: 500px;
   height: 150px;
-  background-color: #2563EB;
   border-radius: 20px;
   margin: auto;
 }
 
 .balance-div {
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 #bal-account {
   font-size: 48px;
+}
+
+.output-div {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bal-account-div {
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+
+.output-div > div {
+  align-items: center;
+  gap: 9px;
 }
 
 /* 🎨 Primary Colors (Main gradient)
