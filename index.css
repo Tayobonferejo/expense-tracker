@@ -84,8 +84,6 @@ main {
 .transaction-div > div:nth-child(2) {
   grid-column-start: 2;
   grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 6;
   background-color: #2563EB;
   border-radius: 6px;
   padding: 15px;
@@ -109,6 +107,8 @@ main {
   display: flex;
   justify-content: space-between;
   font-weight: bolder;
+  padding-left: 0;
+  font-size: 18px;
 
 }
 
@@ -116,3 +116,66 @@ main {
   text-align: center;
   margin-top: 5rem;
 }
+
+ .type-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .type-toggle a {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid #e5e7eb;
+    color: #6b7280;
+  }
+
+  .type-toggle a:first-child:hover { background: var(--text-primary) ;
+    color: white; }
+  .type-toggle a:last-child:hover { background: var(--text-primary) ;
+    color: white; }
+
+  .input-group { margin-bottom: 1rem; }
+
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #374151;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+  }
+
+  button:hover { background-color: #4338ca; }
+
+   .transaction-form {
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
