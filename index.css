@@ -120,13 +120,9 @@
     color: white; 
   }
 
-  .type-toggle a:first-child:hover { 
-    background:var(--text-primary) ;
-    color: white; 
-  }
-  .type-toggle a:last-child:hover { 
-    background: var(--text-primary) ;
-    color: white; 
+  .type-toggle a:first-child:hover, .type-toggle a:last-child:hover { 
+    background:var(--success) ;
+    color: black; 
   }
 
   .choice {
