@@ -1,4 +1,8 @@
-let choice = "income"
+let choice = "income";
+
+let expenseMoney = 0;
+let totalMoney = 0;
+let balanceMoney = 0;
 
 const parentOfChoice = document.querySelector(".type-toggle");
 const expenseChoice = document.getElementById("expense");
@@ -25,6 +29,9 @@ parentOfChoice.addEventListener("click", function(event){
     }
 })
 
-form.addEventListener("click", function(event) {
+form.addEventListener("submit", function(event) {
     event.preventDefault();
+    console.log(description.value);
+    console.log(cashFlow.value);
+    console.log(cashDate.value);
 })
