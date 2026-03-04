@@ -1,8 +1,13 @@
 let choice = "income"
 
-let parentOfChoice = document.querySelector(".type-toggle");
+const parentOfChoice = document.querySelector(".type-toggle");
 const expenseChoice = document.getElementById("expense");
 const incomeChoice = document.getElementById("income");
+const form = document.querySelector(".transaction-form");
+
+const description = document.getElementById("text");
+const cashFlow = document.getElementById("number");
+const cashDate = document.getElementById("date");
 
 parentOfChoice.addEventListener("click", function(event){
     console.log(event.target);
@@ -18,7 +23,8 @@ parentOfChoice.addEventListener("click", function(event){
         incomeChoice.classList.add("choice");     
         choice = "income"
     }
-
 })
 
-
+form.addEventListener("click", function(event) {
+    event.preventDefault();
+})
