@@ -2,11 +2,13 @@ let choice = "income";
 
 let expenseMoney = 0;
 let totalMoney = 0;
-let balanceMoney = 0;
+let balanceMoney = totalMoney - expenseMoney;
 
 const parentOfChoice = document.querySelector(".type-toggle");
 const expenseChoice = document.getElementById("expense");
 const incomeChoice = document.getElementById("income");
+const empty = document.getElementById("empty");
+const transactionDisplay = document.getElementById("transaction-display");
 const form = document.querySelector(".transaction-form");
 
 const description = document.getElementById("text");
@@ -31,7 +33,26 @@ parentOfChoice.addEventListener("click", function(event){
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    console.log(description.value);
-    console.log(cashFlow.value);
-    console.log(cashDate.value);
-})
+
+    if (choice === "expense") {
+        expenseMoney = expenseMoney + cashFlow.value;
+    }
+
+    else if (choice === "income") {
+        totalMoney = totalMoney + cashFlow.value;
+    }
+
+    if(empty && empty.parentNode) {
+        empty.parentNode.removeChild(empty);
+    }
+
+    const eachTransaction = document.createElement("div");
+    eachTransaction.classList.add("each-record");
+    eachTransaction.innerHTML = `<p>${description.value}</p>
+                                    <p>${cashDate.value}</p>
+                                    <p>${choice}</p>
+                                    <p>${cashFlow.value}</p>`;
+
+    transactionDisplay.appendChild(eachTransaction);
+
+});
