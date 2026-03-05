@@ -7,10 +7,12 @@ let balanceMoney = totalMoney - expenseMoney;
 const parentOfChoice = document.querySelector(".type-toggle");
 const expenseChoice = document.getElementById("expense");
 const incomeChoice = document.getElementById("income");
-const empty = document.getElementById("empty");
+const incomeDisplay= document.getElementById("income-display");
+const expenseDisplay = document.getElementById("expense-display");
+const balAccount = document.getElementById("bal-account");
 const transactionDisplay = document.getElementById("transaction-display");
 const form = document.querySelector(".transaction-form");
-
+const empty = document.getElementById("empty");
 const description = document.getElementById("text");
 const cashFlow = document.getElementById("number");
 const cashDate = document.getElementById("date");
@@ -36,17 +38,20 @@ form.addEventListener("submit", function(event) {
     
 
     if (choice === "expense") {
-        expenseMoney = expenseMoney + cashFlow.value;
+        expenseMoney = expenseMoney + Number(cashFlow.value);
+        expenseDisplay.innerHTML = `$${expenseMoney}`
     }
 
     else if (choice === "income") {
-        totalMoney = totalMoney + cashFlow.value;
+        totalMoney = totalMoney + Number(cashFlow.value);
+        incomeDisplay.innerHTML = `$${totalMoney}`
+        
     }
 
     if(empty && empty.parentNode) {
         empty.parentNode.removeChild(empty);
     }
-
+    
     const eachTransaction = document.createElement("div");
     eachTransaction.classList.add("each-record");
     eachTransaction.innerHTML = `<p class="item">${description.value}</p>
@@ -56,6 +61,7 @@ form.addEventListener("submit", function(event) {
                                     <p class="option"><i class="fa-solid fa-ellipsis"></i></p>`;
 
     transactionDisplay.appendChild(eachTransaction);
+
     form.reset();
 
 });
