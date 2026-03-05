@@ -193,3 +193,16 @@
     width: 100%;
     max-width: 400px;
   }
+
+  .each-record {
+    display: flex;
+    justify-content: space-between;
+  }
+
+   .item {
+    width :25%
+  }
+
+   .option {
+    width: 10%;
+   }

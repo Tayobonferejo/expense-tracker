@@ -33,6 +33,7 @@ parentOfChoice.addEventListener("click", function(event){
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
+    
 
     if (choice === "expense") {
         expenseMoney = expenseMoney + cashFlow.value;
@@ -48,11 +49,13 @@ form.addEventListener("submit", function(event) {
 
     const eachTransaction = document.createElement("div");
     eachTransaction.classList.add("each-record");
-    eachTransaction.innerHTML = `<p>${description.value}</p>
-                                    <p>${cashDate.value}</p>
-                                    <p>${choice}</p>
-                                    <p>${cashFlow.value}</p>`;
+    eachTransaction.innerHTML = `<p class="item">${description.value}</p>
+                                    <p class="item">${cashDate.value}</p>
+                                    <p class="item">${choice}</p>
+                                    <p class="item">${cashFlow.value}</p>
+                                    <p class="option"><i class="fa-solid fa-ellipsis"></i></p>`;
 
     transactionDisplay.appendChild(eachTransaction);
+    form.reset();
 
 });
