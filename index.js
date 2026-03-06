@@ -2,7 +2,7 @@ let choice = "income";
 
 let expenseMoney = 0;
 let totalMoney = 0;
-let balanceMoney = totalMoney - expenseMoney;
+let balanceMoney ;
 
 const parentOfChoice = document.querySelector(".type-toggle");
 const expenseChoice = document.getElementById("expense");
@@ -39,12 +39,18 @@ form.addEventListener("submit", function(event) {
 
     if (choice === "expense") {
         expenseMoney = expenseMoney + Number(cashFlow.value);
-        expenseDisplay.innerHTML = `$${expenseMoney}`
+        balanceMoney = totalMoney - expenseMoney;
+        expenseDisplay.innerHTML = `$${expenseMoney}`;
+        balAccount.innerHTML = `$${balanceMoney}`;
+        console.log(balanceMoney);
     }
 
     else if (choice === "income") {
         totalMoney = totalMoney + Number(cashFlow.value);
-        incomeDisplay.innerHTML = `$${totalMoney}`
+        balanceMoney = totalMoney - expenseMoney;
+        incomeDisplay.innerHTML = `$${totalMoney}`;
+        balAccount.innerHTML = `$${balanceMoney}`;
+        console.log(balanceMoney);
         
     }
 
