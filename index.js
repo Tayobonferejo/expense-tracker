@@ -17,6 +17,7 @@ const description = document.getElementById("text");
 const cashFlow = document.getElementById("number");
 const cashDate = document.getElementById("date");
 
+
 parentOfChoice.addEventListener("click", function(event){
     console.log(event.target);
 
@@ -69,12 +70,28 @@ form.addEventListener("submit", function(event) {
 
                                         <div class="menu">
                                             <p class="delete">Delete</p>
-                                            <p class="author">Author</p>
                                         </div>
                                     </div>`;
 
     transactionDisplay.appendChild(eachTransaction);
 
     form.reset();
+
+});
+
+
+transactionDisplay.addEventListener("click", function (e) {
+
+  // OPEN MENU
+  if (e.target.classList.contains("menu-btn")) {
+    const menu = e.target.nextElementSibling;
+    menu.classList.toggle("show");
+  }
+
+  // DELETE RECORD
+  if (e.target.classList.contains("delete")) {
+    const record = e.target.closest(".each-record");
+    record.remove();
+  }
 
 });
