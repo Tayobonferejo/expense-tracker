@@ -64,7 +64,14 @@ form.addEventListener("submit", function(event) {
                                     <p class="item">${cashDate.value}</p>
                                     <p class="item">${choice}</p>
                                     <p class="item">${cashFlow.value}</p>
-                                    <p class="option"><i class="fa-solid fa-ellipsis"></i></p>`;
+                                    <div class="option">
+                                        <i class="fa-solid fa-ellipsis menu-btn"></i>
+
+                                        <div class="menu">
+                                            <p class="delete">Delete</p>
+                                            <p class="author">Author</p>
+                                        </div>
+                                    </div>`;
 
     transactionDisplay.appendChild(eachTransaction);
 
