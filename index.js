@@ -51,7 +51,6 @@ form.addEventListener("submit", function(event) {
         balanceMoney = totalMoney - expenseMoney;
         incomeDisplay.innerHTML = `$${totalMoney}`;
         balAccount.innerHTML = `$${balanceMoney}`;
-        console.log(balanceMoney);
         
     }
 
@@ -91,6 +90,15 @@ transactionDisplay.addEventListener("click", function (e) {
   // DELETE RECORD
   if (e.target.classList.contains("delete")) {
     const record = e.target.closest(".each-record");
+
+    // get all item fields
+    const items = record.querySelectorAll(".item");
+
+    // cashFlow is the 4th item
+    const cashFlowValue = items[3].textContent;
+
+    console.log(cashFlowValue);
+
     record.remove();
   }
 
