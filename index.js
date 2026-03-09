@@ -41,9 +41,8 @@ form.addEventListener("submit", function(event) {
     if (choice === "expense") {
         expenseMoney = expenseMoney + Number(cashFlow.value);
         balanceMoney = totalMoney - expenseMoney;
-        expenseDisplay.innerHTML = `$${expenseMoney}`;
+        expenseDisplay.innerHTML = `-$${expenseMoney}`;
         balAccount.innerHTML = `$${balanceMoney}`;
-        console.log(balanceMoney);
     }
 
     else if (choice === "income") {
@@ -97,7 +96,21 @@ transactionDisplay.addEventListener("click", function (e) {
     // cashFlow is the 4th item
     const cashFlowValue = items[3].textContent;
 
-    console.log(cashFlowValue);
+    let choiceValue = items[2].textContent
+
+    if(choiceValue === "income") {
+        totalMoney = totalMoney - Number(cashFlowValue);
+        balanceMoney = totalMoney - expenseMoney;
+        incomeDisplay.innerHTML = `$${totalMoney}`;
+        balAccount.innerHTML = `$${balanceMoney}`;
+    }
+
+    else if(choiceValue === "expense") {
+        expenseMoney = expenseMoney - Number(cashFlowValue);
+        balanceMoney = totalMoney - expenseMoney;
+        expenseDisplay.innerHTML = `-$${expenseMoney}`;
+        balAccount.innerHTML = `$${balanceMoney}`;
+    }
 
     record.remove();
   }
