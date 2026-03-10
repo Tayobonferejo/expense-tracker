@@ -16,7 +16,9 @@ const empty = document.getElementById("empty");
 const description = document.getElementById("text");
 const cashFlow = document.getElementById("number");
 const cashDate = document.getElementById("date");
-
+const summaryBal = document.getElementById("summary-bal");
+const summaryTotal = document.getElementById("summary-total");
+const summaryExpense = document.getElementById("summary-expense");
 
 parentOfChoice.addEventListener("click", function(event){
     console.log(event.target);
@@ -43,6 +45,8 @@ form.addEventListener("submit", function(event) {
         balanceMoney = totalMoney - expenseMoney;
         expenseDisplay.innerHTML = `-$${expenseMoney}`;
         balAccount.innerHTML = `$${balanceMoney}`;
+        summaryBal.innerText = `$${balanceMoney}`;
+        summaryExpense.innerText = `$${expenseMoney}`;
     }
 
     else if (choice === "income") {
@@ -50,6 +54,9 @@ form.addEventListener("submit", function(event) {
         balanceMoney = totalMoney - expenseMoney;
         incomeDisplay.innerHTML = `$${totalMoney}`;
         balAccount.innerHTML = `$${balanceMoney}`;
+
+        summaryBal.innerText = `$${balanceMoney}`;
+        summaryTotal.innerText = `$${totalMoney}`;
         
     }
 
@@ -103,6 +110,9 @@ transactionDisplay.addEventListener("click", function (e) {
         balanceMoney = totalMoney - expenseMoney;
         incomeDisplay.innerHTML = `$${totalMoney}`;
         balAccount.innerHTML = `$${balanceMoney}`;
+
+        summaryBal.innerText = `$${balanceMoney}`;
+        summaryTotal.innerText = `$${totalMoney}`;
     }
 
     else if(choiceValue === "expense") {
@@ -110,6 +120,9 @@ transactionDisplay.addEventListener("click", function (e) {
         balanceMoney = totalMoney - expenseMoney;
         expenseDisplay.innerHTML = `-$${expenseMoney}`;
         balAccount.innerHTML = `$${balanceMoney}`;
+
+        summaryBal.innerText = `$${balanceMoney}`;
+        summaryExpense.innerText = `$${expenseMoney}`;
     }
 
     record.remove();
