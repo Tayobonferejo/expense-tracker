@@ -224,7 +224,7 @@ TRANSACTIONS
   border-radius:12px;
 }
 
-.transaction-div h3{
+.transaction-div > div > h3{
   margin-bottom:10px;
 }
 
@@ -302,6 +302,17 @@ SUMMARY
   border-radius:12px;
 }
 
+
+.summary > div {
+    background-color: var(--primary-dark);
+    margin: 9px 0;
+    padding: 5px;
+    border-radius: 9px;
+}
+
+.summary > div > h3 {
+    margin-bottom: 5px;
+}
 /* =========================
 EMPTY STATE
 ========================= */
